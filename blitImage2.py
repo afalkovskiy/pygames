@@ -1,8 +1,9 @@
 import pygame
 import random
 from pygame.locals import*
-# img = pygame.image.load('minyon.bmp')
-img = pygame.image.load('clouds2.bmp')
+img = pygame.image.load('minyon.bmp')
+img = pygame.image.load('ball.png')
+# img = pygame.image.load('clouds2.bmp')
 img.set_alpha(128)
 # img=pygame.transform.rotate(img, -45)
 # img=pygame.transform.rotozoom(img, -45, 1.5)
@@ -20,16 +21,16 @@ while running:
     screen.fill((white))
     
     screen.blit(img,(x,y))
-    screen.blit(img,(x*2,y+100))
-    x = x + 2
+    # screen.blit(img,(x*2,y+100))
+    x = x + 10
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = 0
 
-    if x>600:
+    if x>500:
         x = random.randint(100, 500)
-        y = random.randint(-100, 0)
+        y = random.randint(0, 200)
 
     pygame.display.flip()
-    pygame.time.wait(100)
+    pygame.time.wait(50)
